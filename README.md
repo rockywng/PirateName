@@ -1,2 +1,2 @@
 # Pirate-Name
-Using the Racket htdp library to produce a simple GUI along with a great way to impress your friends with your new pirate name!
+This project uses the Racket htdp library's GUI toolkit to build a very simple GUI. Input your name and receive your pirate name!
