@@ -17,7 +17,7 @@
 
 ; text1 : GUI-ITEM
 (define text1
-  (make-text "Enter ye name scallywag!"))
+  (make-text "Enterrr ye name scallywag!"))
  
 ; msg1 : GUI-ITEM
 (define msg1
