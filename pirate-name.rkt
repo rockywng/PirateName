@@ -9,10 +9,6 @@
          (cons #\a (cons #\r (cons #\r (pirate-namer (rest loc)))))]
         [(char=? (first loc) #\A)
          (cons #\A (cons #\r (cons #\r (pirate-namer (rest loc)))))]
-        [(char=? (first loc) #\R)
-         (cons #\R (cons #\r (cons #\r (pirate-namer (rest loc)))))]
-        [(char=? (first loc) #\r)
-         (cons #\r (cons #\r (cons #\r (pirate-namer (rest loc)))))]
         [else (cons (first loc) (pirate-namer (rest loc)))]))
 
 ; text1 : GUI-ITEM
@@ -21,18 +17,19 @@
  
 ; msg1 : GUI-ITEM
 (define msg1
-  (make-message (string-append "Ahoy," (make-string 33 #\space))))
+  (make-message (make-string 99 #\space)))
  
 ; Event -> true
 ; draws the current contents of text1 into msg1, prepended with
 ; "Ahoy, "
 (define (respond e)
-  (draw-message msg1
-                (string-append "Ahoy, "
-                               (list->string (pirate-namer
+  (local [(define pirate-name (list->string (pirate-namer
                                               (string->list
                                                (text-contents
-                                                text1)))))))
+                                                text1)))))]
+  (cond [(string=? (text-contents text1) pirate-name)
+         (draw-message msg1 "Darrrn, ye pirate name be the same as ye regular name.")]
+        [else (draw-message msg1 (string-append "Ahoy, " pirate-name))])))
  
 ; set up window with three "lines":
 ;    a text field, a message, and two buttons
@@ -44,3 +41,4 @@
     (list msg1)
     (list (make-button "Enterrr" respond)
           (make-button "Exit" (lambda (e) (hide-window w)))))))
+
