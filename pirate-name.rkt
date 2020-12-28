@@ -33,7 +33,7 @@
  
 ; set up window with three "lines":
 ;    a text field, a message, and two buttons
-; fill in text and click OKAY
+; fill in text and click Enterrr
 (define w
   (create-window
    (list
