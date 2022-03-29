@@ -1,4 +1,4 @@
-# Pirate-Name
+# PirateName
 This project uses the Racket htdp library's GUI toolkit to build a very simple GUI. Input your name and receive your pirate name! One of the assignments I had to complete for the CS135 course at Waterloo had us do something very similar to this, just without the GUI. As I was reminiscing about my first semester of university, I remembered how fun this assignment was, and of course, I had to recreate it. It's incredibly simple, but I had a lot of fun building a GUI in Racket, and had even more fun using it!
 
 ## Usage
